@@ -28,6 +28,8 @@
 	}
 
 	function initDraggableObject_dragend() {
+		resetDropHelpers();
+
 		dragEl = null;
 		elDropHandled = false;
 		newMuraObject = false;
@@ -164,6 +166,8 @@
 
 		if(obj.data('object')=='container'){
 			var EventListenerOptions=true;
+			resetDropHelpers();
+			
 		} else {
 			var EventListenerOptions;
 		}
@@ -577,6 +581,21 @@
 			});
 
 	}
+
+	function resetDropHelpers() {
+		var obj = Mura('body');
+		obj.find('.mura-drophelper').each(function() { this.remove() });
+		obj.find('.mura-object[data-object="container"]'
+		).each(function() {
+			var dropHelperBefore = document.createElement("div");
+			dropHelperBefore.classList.add("mura-drophelper");
+			var dropHelperAfter = dropHelperBefore.cloneNode();
+			this.parentNode.insertBefore(dropHelperBefore, this);
+			this.parentNode.insertBefore(dropHelperAfter, this.nextSibling);
+			initLooseDropTarget(dropHelperBefore);
+			initLooseDropTarget(dropHelperAfter);
+		})
+	};
 
 	function initRegion_dragover(e){
 		e.preventDefault();
