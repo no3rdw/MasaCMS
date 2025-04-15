@@ -4489,7 +4489,7 @@ function cleanModuleProps(obj) {
 function resetAsyncObject(el, empty) {
   var self = Mura(el);
 
-  if (self.data('transient')) {
+  if (self.data('transient') == 'true') {
     self.remove();
   } else {
     if (typeof empty == 'undefined') {
