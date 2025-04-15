@@ -9858,7 +9858,8 @@ fieldset[disabled] .mura .navbar-inverse .btn-link:focus {
 }
 
 .mura-drophelper {
-  height: 5px;
+  height: 6px;
+  padding: 3px;
   background-color:silver;
   width: 100%;
   opacity: .5
