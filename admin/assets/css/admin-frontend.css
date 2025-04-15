@@ -9856,6 +9856,14 @@ fieldset[disabled] .mura .navbar-inverse .btn-link:focus {
   position: relative;
   z-index: 1;
 }
+
+.mura-drophelper {
+  height: 5px;
+  background-color:silver;
+  width: 100%;
+  opacity: .5
+}
+
 @media print {
   .mura-toolbar {
     display: none;
