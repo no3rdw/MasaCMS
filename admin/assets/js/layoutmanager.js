@@ -118,6 +118,7 @@
 					}
 					//dragEl.setAttribute('data-droptarget',Mura(this).getSelector());
 					Mura('#adminSave').show();
+					dragEl.removeAttribute('data-transient');
 					Mura(target).closest('.mura-region-local').data('dirty', true);
 					elDropHandled = true;
 					disabledEventPropagation(e);
@@ -318,6 +319,7 @@
 						mDragEl.data('async', true);
 					}
 
+					dragEl.removeAttribute('data-transient');
 					Mura(target).closest('.mura-region-local').data('dirty', true);
 
 					if(Mura(target).hasClass('mura-object')){
@@ -627,6 +629,7 @@
 			}
 
 			Mura('#adminSave').show();
+			dragEl.removeAttribute('data-transient');
 			Mura(dragEl).data('async', true);
 			Mura(dragEl).addClass('mura-async-object');
 			Mura(this).data('dirty', true);
