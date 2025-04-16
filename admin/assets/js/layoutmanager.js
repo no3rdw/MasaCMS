@@ -585,8 +585,9 @@
 	function resetDropHelpers() {
 		var obj = Mura('body');
 		obj.find('.mura-drophelper').each(function() { this.remove() });
-		obj.find('.mura-object[data-object="container"]'
-		).each(function() {
+		obj.find('.mura-object[data-object="container"]')
+		.filter(function(e) { if (!e.closest(".mura-region-loose")) { return true; }} )
+		.each(function() {
 			var dropHelperBefore = document.createElement("div");
 			dropHelperBefore.classList.add("mura-drophelper");
 			var dropHelperAfter = dropHelperBefore.cloneNode();
