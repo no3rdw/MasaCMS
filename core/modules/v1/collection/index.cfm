@@ -208,7 +208,7 @@ version 2 without this exception.  You may, if you choose, apply this exception 
 					<cfset args.today=createDate(variables.$.event('year'),1,1)>
 				<cfelse>
 					<cfset args.today=now()>
-					<cfset args.type="default">
+					<cfset args.type="Folder">
 				</cfif>
 				<cfset args.categoryid=$.event('categoryid')>
 
@@ -233,7 +233,6 @@ version 2 without this exception.  You may, if you choose, apply this exception 
 
 				<cfset args.parentid=$.content('contentid')>
 				<cfset args.siteid=$.content('siteid')>
-				<cfset args.type='Folder'>
 
 				<cfif not (structkeyExists(objectParams,'targetattr') and objectParams.targetattr eq 'objectparams') and isNumeric(objectParams.maxItems)>
 					<cfset args.size=objectParams.maxItems>
